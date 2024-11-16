@@ -1,0 +1,45 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Obituary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add a New Obituary</h1>
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter full name" required>
+            </div>
+            <div class="form-group">
+                <label for="date_of_birth">Date of Birth:</label>
+                <input type="date" id="date_of_birth" name="date_of_birth" required>
+            </div>
+            <div class="form-group">
+                <label for="date_of_death">Date of Death:</label>
+                <input type="date" id="date_of_death" name="date_of_death" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" placeholder="Write a short obituary..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" placeholder="Your name" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="output">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
