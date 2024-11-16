@@ -1,0 +1,36 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obituaries</title>
+</head>
+<body>
+    <h2>Obituaries</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>Date of Death</th>
+                <th>Content</th>
+                <th>Author</th>
+                <th>Submission Date</th>
+            </tr>
+            <tr>
+        </thead>
+        <tbody>
+            {% for obituary in obituaries %}
+            <tr>
+                <td>{{ obituary[1] }}</td>
+                <td>{{ obituary[2] }}</td>
+                <td>{{ obituary[3] }}</td>
+                <td>{{ obituary[4] }}</td>
+                <td>{{ obituary[5] }}</td>
+                <td>{{ obituary[6] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
